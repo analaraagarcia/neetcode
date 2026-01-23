@@ -3,8 +3,7 @@
 
 using namespace std;
 
-// brute force
-bool isValidSudoku2(vector<vector<char>> &board) {    
+bool isValidSudoku(vector<vector<char>> &board) {    
     int seenRows[9][10] = {0};
     int seenCols[9][10] = {0};
     int seenBoxes[9][10] = {0};
@@ -47,5 +46,5 @@ int main() {
         {'.','.','.','.','8','.','.','7','9'}
     };
 
-    cout << isValidSudoku2(board);
+    cout << isValidSudoku(board);
 }
