@@ -20,3 +20,11 @@ int lengthOfLongestSubstring(string s) {
     }
     return longest;   
 }
+
+int main() {
+    string s = "abcabcbb";
+
+    cout << lengthOfLongestSubstring(s);
+
+    return 0;
+}
