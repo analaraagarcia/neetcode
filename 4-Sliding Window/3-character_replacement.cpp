@@ -25,7 +25,7 @@ int characterReplacement(string s, int k) {
 }
 
 int main() {
-    string s = "ABAB";
+    string s = "AABABBA";
     
     cout << characterReplacement(s, 2);
 
