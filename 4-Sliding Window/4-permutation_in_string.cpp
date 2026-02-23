@@ -82,3 +82,12 @@ bool checkInclusion(string s1, string s2) { // time complexity: O(n) , space com
     }
     return matches == 26;
 }
+
+int main() {
+    string s1 = "ab";
+    string s2 = "eidboaoo";
+
+    cout << checkInclusion1(s1, s2);
+
+    return 0;
+}
