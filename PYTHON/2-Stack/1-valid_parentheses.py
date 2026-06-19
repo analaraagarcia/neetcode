@@ -28,9 +28,6 @@ def isValid(s: str) -> bool:
             pilha.append(c)
     return not pilha
 
-def main():
+if __name__ == "__main__":
     s = "[]"
     print(isValid(s))
-
-if __name__ == "__main__":
-    main()
