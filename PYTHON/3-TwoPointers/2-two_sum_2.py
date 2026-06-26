@@ -5,13 +5,13 @@ def twoSum(numbers: List[int], target: int) -> List[int]:
 
     while esq < dir:
         soma = numbers[esq] + numbers[dir]
-        if soma == target:
-            return [esq + 1, dir + 1]
         
         if soma < target:
             esq += 1
-        else:
+        elif soma > target:
             dir -= 1
+        else:
+            return [esq + 1, dir + 1]
     
     return []
 
