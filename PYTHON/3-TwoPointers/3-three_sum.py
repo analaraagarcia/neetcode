@@ -13,7 +13,6 @@ def threeSum(nums: List[int]) -> List[List[int]]:
             continue
 
         left, right = i + 1, len(nums) - 1 # o da esquerda vai estar logo após o número fixado e o da direita na última posição
-        
         while left < right:
             three_sum = n + nums[left] + nums[right]
             if three_sum > 0:
