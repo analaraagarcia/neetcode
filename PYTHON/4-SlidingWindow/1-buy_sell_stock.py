@@ -14,7 +14,7 @@ def maxProfit(prices: List[int]) -> int:
 
     return max_prof
 
-# dp
+# dp (dinamic programming)
 # def maxProfit(prices: List[int]) -> int:
 #     max_prof = 0
 #     min_buy = prices[0]
