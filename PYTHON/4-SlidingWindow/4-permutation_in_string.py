@@ -3,15 +3,18 @@ def checkInclusion(s1: str, s2: str) -> bool:
         return False
     
     s1_cont, s2_cont = [0] * 26, [0] * 26
+    
     for i in range(len(s1)):
         s1_cont[ord(s1[i]) - ord('a')] += 1
         s2_cont[ord(s2[i]) - ord('a')] += 1
 
     match = 0
+
     for i in range(26):
         match += (1 if s1_cont[i] == s2_cont[i] else 0)
 
     left = 0
+    
     for right in range(len(s1), len(s2)):
         if match == 26:
             return True
