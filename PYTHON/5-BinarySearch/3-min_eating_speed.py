@@ -1,17 +1,6 @@
 from typing import List
 import math
 
-# brute force
-# def minEatingSpeed(piles: List[int], h: int) -> int:
-#     speed = 1
-#     while True:
-#         totalTime = 0
-#         for pile in piles:
-#             totalTime += math.ceil(pile / speed)
-#         if totalTime <= h:
-#             return speed
-#         speed += 1
-
 # binary search
 def minEatingSpeed(piles: List[int], h: int) -> int:
     left, right = 1, max(piles)
@@ -29,6 +18,17 @@ def minEatingSpeed(piles: List[int], h: int) -> int:
             left = k + 1
     
     return res
+
+# brute force
+# def minEatingSpeed(piles: List[int], h: int) -> int:
+#     speed = 1
+#     while True:
+#         totalTime = 0
+#         for pile in piles:
+#             totalTime += math.ceil(pile / speed)
+#         if totalTime <= h:
+#             return speed
+#         speed += 1
 
 if __name__ == "__main__":
     piles = [25,10,23,4]
