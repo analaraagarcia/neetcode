@@ -23,6 +23,17 @@ int search(vector<int>& nums, int target) {
     return -1;
 }
 
+// usando lower bound
+// int search(vector<int>& nums, int target) {
+//     auto it = lower_bound(nums.begin(), nums.end(), target);
+    
+//     if (it != nums.end() && *it == target) {
+//         return it - nums.begin();
+//     }
+
+//     return -1;
+// }
+
 int main() {
     vector<int> nums = {-1, 0, 2, 4, 6, 8};
     int target = 4;
