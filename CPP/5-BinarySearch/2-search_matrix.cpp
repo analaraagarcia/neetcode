@@ -3,6 +3,22 @@
 
 using namespace std;
 
+// brute force
+// bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//     int row = matrix.size();
+//     int col = matrix[0].size();
+
+//     for (int i = 0; i < row; i++) {
+//         for (int j = 0; j < col; j++) {
+//             if (target == matrix[i][j]) {
+//                 return true;
+//             }
+//         }
+//     }
+
+//     return false;
+// }
+
 // melhor
 bool searchMatrix(vector<vector<int>>& matrix, int target) {
     int rows = matrix.size();
