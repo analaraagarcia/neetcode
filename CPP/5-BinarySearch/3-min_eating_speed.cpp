@@ -4,22 +4,46 @@
 
 using namespace std;
 
-// brute force
+// binary search
 int minEatingSpeed(vector<int>& piles, int h) {
-    int speed = 1;
-    while (true) {
+    int left = 1;
+    int right = *max_element(piles.begin(), piles.end());
+    int ans = right;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
         long long totalTime = 0;
+        
         for (int pile : piles) {
-            totalTime += (pile + speed - 1) / speed;
+            totalTime += (pile + mid - 1) / mid;
         }
 
         if (totalTime <= h) {
-            return speed;
+            ans = mid;
+            right = mid - 1;
+        } else {
+            left = mid + 1;
         }
-
-        speed++;
     }
+    return ans;
 }
+
+// brute force
+// int minEatingSpeed(vector<int>& piles, int h) {
+//     int speed = 1;
+//     while (true) {
+//         long long totalTime = 0;
+//         for (int pile : piles) {
+//             totalTime += (pile + speed - 1) / speed;
+//         }
+
+//         if (totalTime <= h) {
+//             return speed;
+//         }
+
+//         speed++;
+//     }
+// }
 
 int main() {
     vector<int> piles = {1, 4, 3, 2};
