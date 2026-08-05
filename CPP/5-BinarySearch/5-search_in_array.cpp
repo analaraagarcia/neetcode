@@ -29,7 +29,7 @@ int search(vector<int>& nums, int target) {
 }
 
 int main() {
-    vector<int> nums = {3,4,5,6,1,2};
+    vector<int> nums = {3, 4, 5, 6, 1, 2};
     int target = 1;
     cout << search(nums, target);
 }
