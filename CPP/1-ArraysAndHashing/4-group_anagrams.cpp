@@ -4,12 +4,14 @@
 #include <string>
 #include <algorithm>
 
-std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs) {
-    std::vector<std::vector<std::string>> res;
-    std::unordered_map<std::string, std::vector<std::string>> mp;
+using namespace std;
+
+vector<vector<string>> groupAnagrams(vector<string>& strs) {
+    vector<vector<string>> res;
+    unordered_map<string, vector<string>> mp;
 
     for (auto& s : strs) {
-        std::string key = s;
+        string key = s;
         sort(key.begin(), key.end());
         mp[key].push_back(s);
     }
