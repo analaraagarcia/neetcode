@@ -3,15 +3,17 @@
 #include <unordered_map>
 #include <queue>
 
-std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
-    std::unordered_map<int, int> mp;
+using namespace std;
+
+vector<int> topKFrequent(vector<int>& nums, int k) {
+    unordered_map<int, int> mp;
 
     for (int num : nums) {
         mp[num]++;
     }
 
-    using Pii = std::pair<int, int>;
-    std::priority_queue<Pii, std::vector<Pii>, std::greater<Pii>> minHeap;
+    using Pii = pair<int, int>;
+    priority_queue<Pii, vector<Pii>, greater<Pii>> minHeap;
 
     for (auto& pair : mp) {
         minHeap.push({pair.second, pair.first});
@@ -20,7 +22,7 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
         }
     }
 
-    std::vector<int> result;
+    vector<int> result;
 
     while (!minHeap.empty()) {
         result.push_back(minHeap.top().second);
@@ -30,9 +32,9 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
     return result;
 }
 
-std::vector<int> topKFrequent2(std::vector<int>& nums, int k) {
-    std::unordered_map<int, int> mp;
-    std::priority_queue<std::pair<int, int>> pq;
+vector<int> topKFrequent2(vector<int>& nums, int k) {
+    unordered_map<int, int> mp;
+    priority_queue<pair<int, int>> pq;
 
     for (int num : nums) {
         mp[num]++;
@@ -42,7 +44,7 @@ std::vector<int> topKFrequent2(std::vector<int>& nums, int k) {
         pq.push({it.second, it.first});
     }
 
-    std::vector<int> ans;
+    vector<int> ans;
 
     while (k) {
         ans.push_back(pq.top().second);
