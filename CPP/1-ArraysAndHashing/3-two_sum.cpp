@@ -3,9 +3,11 @@
 #include <vector>
 #include <utility>
 
+using namespace std;
+
 // brute force
-std::vector<int> twoSum1(std::vector<int>& nums, int target) {
-    std::vector<int> sum;
+vector<int> twoSum1(vector<int>& nums, int target) {
+    vector<int> sum;
     int len = nums.size();
     for (int i = 0; i < len; i++) {
         for (int j = i + 1; j < len; j++) {
@@ -19,8 +21,8 @@ std::vector<int> twoSum1(std::vector<int>& nums, int target) {
 }
 
 // melhor solução
-std::vector<int> twoSum(std::vector<int>& nums, int target) {
-    std::unordered_map<int, int> numMap;
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> numMap;
     int len = nums.size();
     for (int i = 0; i < len; i++) {
         int complement = target - nums[i];
@@ -34,14 +36,14 @@ std::vector<int> twoSum(std::vector<int>& nums, int target) {
 
 int main() {
 
-    std::vector<int> nums = {2, 7, 11, 15};
+    vector<int> nums = {2, 7, 11, 15};
     int target = 9;
 
-    std::vector<int> result = twoSum(nums, target);
+    vector<int> result = twoSum(nums, target);
     if (!result.empty()) {
-        std::cout << "[" << result[0] << "," << result[1] << "]";
+        cout << "[" << result[0] << "," << result[1] << "]";
     } else {
-        std::cout << "[]";
+        cout << "[]";
     }
     return 0;
 }
